@@ -1,0 +1,5 @@
+Die Datei iostream befindet sich im Verzeichnis
+/usr/incude/c++/4.7
+
+Die Datei lässt sich öffnen und lesen. Es handelt sich um eine
+klassische c++ Header Datei.

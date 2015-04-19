@@ -47,5 +47,16 @@ int main()
 
 string crypt(string s)
 {
-  return s;
+  char crypt[100] = { };
+  int i = 0;
+  for (auto c: s)
+  {
+    crypt[i] = c;
+    ++i;
+    if (i > 99)
+    {
+      break;
+    }
+  }
+  return s = crypt;
 }

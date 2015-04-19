@@ -4,6 +4,8 @@
 #include <stdlib.h>
 using namespace std;
 
+string crypt(string s);
+
 int main()
 {
   string read;
@@ -39,4 +41,11 @@ int main()
   cout << i << " x 'i'" << endl;
   cout << o << " x 'o'" << endl;
   cout << u << " x 'u'" << endl;
+  cout << "Verschlüsselter String:" << endl;
+  cout << crypt(read) << endl;
+}
+
+string crypt(string s)
+{
+  return s;
 }

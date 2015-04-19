@@ -10,8 +10,7 @@ int main()
   int a = 0, e = 0, i = 0, o = 0, u = 0;
 
   cout << "Bitte Zeichenkette eingeben:" << endl;
-  cin >> read;
-  cout << read << endl;
+  getline(cin, read);
  
   for (auto c: read)
   {

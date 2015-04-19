@@ -51,12 +51,13 @@ string crypt(string s)
   int i = 0;
   for (auto c: s)
   {
-    crypt[i] = c;
+    crypt[i] = c + 1; // neds to be checked!
     ++i;
     if (i > 99)
     {
       break;
     }
   }
+
   return s = crypt;
 }

@@ -5,6 +5,9 @@
 using namespace std;
 
 string crypt(string s);
+string crypt2(string s);
+string decrypt(string s);
+string decrypt2(string s);
 
 int main()
 {
@@ -43,21 +46,99 @@ int main()
   cout << u << " x 'u'" << endl;
   cout << "Verschlüsselter String:" << endl;
   cout << crypt(read) << endl;
+  cout << "Entschlüsselter String:" << endl;
+  cout << decrypt(crypt(read)) << endl;
+  cout << "Meine Verschlüsselung:" << endl;
+  cout << crypt2(read) << endl;
+  cout << "Meine Entschlüsselung:" << endl;
+  cout << decrypt2(crypt2(read)) << endl;
 }
 
 string crypt(string s)
 {
-  char crypt[100] = { };
   int i = 0;
   for (auto c: s)
   {
-    crypt[i] = c + 1; // neds to be checked!
-    ++i;
-    if (i > 99)
+    if (c == 'z')
     {
-      break;
+      s[i] = 'a';
     }
+    if (c == ' ')
+    {
+      s[i] == ' ';
+    }
+    else
+    {
+      s[i] = c + 1;
+    }
+    ++i;
   }
 
-  return s = crypt;
+  return s;
+}
+
+string decrypt(string s)
+{
+  int i = 0;
+  for (auto c: s)
+  {
+    if (c == 'a')
+    {
+      s[i] = 'z';
+    }
+    if (c == ' ')
+    {
+      s[i] = ' ';
+    }
+    else
+    {
+      s[i] = c - 1;
+    }
+    ++i;
+  }
+  return s;
+}
+
+string crypt2(string s)
+{
+  int i = 0;
+  for (auto c: s)
+  {
+    if (c == 'a')
+    {
+      s[i] = '@';
+    }
+    else if (c == 'e')
+    {
+      s[i] = '3';
+    }
+    else if (c == 's')
+    {
+      s[i] = '5';
+    }
+    ++i;
+  }
+  return s;
+}
+
+string decrypt2(string s)
+{
+  int i = 0;
+  for (auto c: s)
+  {
+    if (c == '@')
+    {
+      s[i] = 'a';
+    }
+    else if (c == '3')
+    {
+      s[i] = 'e';
+    }
+    else if (c == '5')
+    {
+      s[i] = 's';
+    }
+    ++i;
+  }
+  return s;
 }

@@ -7,6 +7,7 @@ int main()
 {
   char c[100] = { };
   int d = 1;
+  int result = 0;
   cout << "Bitte Ganzzahl eingeben:" << endl;
   cin >> c;
   
@@ -16,11 +17,12 @@ int main()
     {
       if (*(c+i) < 58 && *(c+i) > 47)
       {
-        
+        result += d * ((int)*(c+i) - 48);
+        d *= 10;
       }
       else if (i == 0 && *(c+i) == 45)
       {
-
+        continue;
       }
       else
       {
@@ -29,4 +31,5 @@ int main()
       }
     }
   }
+  cout << "Integer lautet: " << result << endl;
 }

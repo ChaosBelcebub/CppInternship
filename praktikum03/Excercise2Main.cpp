@@ -31,7 +31,7 @@ int main()
   cout << "17 / 5 - 3 * 4 = " << solution << endl;
   solution = 17 / (5 - 3) * 4;
   cout << "17 / (5 - 3) * 4 = " << solution << endl;
-  solution = 17 / (5 - 3) * 4;
+  solution = 17 / ((5 - 3) * 4);
   cout << "17 / ((5 - 3) * 4) = " << solution << endl;
   solution = -3 * ((17 % -6) / 2);
   cout << "-3 * ((17 % -6) / 2) = " << solution << endl;

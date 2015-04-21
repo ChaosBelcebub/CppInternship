@@ -15,13 +15,6 @@ int main()
   double result = log10((double)i)/log10(2);
   
   cout << "Benötigt werden: ";
-  if (result - (int)result > 0.0)
-  {
-    cout << (int)result + 1;
-  }
-  else
-  {
-    cout << (int)result;
-  }
+  cout << (int)result + 1;
   cout << " Bit." << endl;
 }

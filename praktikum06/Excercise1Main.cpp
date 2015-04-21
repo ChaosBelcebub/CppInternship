@@ -7,15 +7,18 @@ void menu();
 
 int main()
 {
+  // Variablen
   int stack[10] = {};
   int count = 0;
   char c;
   bool run = true;
 
+  // Menü aufrufen
   menu();
 
   while (run)
   {
+    // Befehl einlesen
     cin >> c;
 
     switch (c)
@@ -58,6 +61,7 @@ int main()
   }
 }
 
+// Ausgabe eines Menüs
 void menu()
 {
   cout << "Stack der Größe 10" << endl;

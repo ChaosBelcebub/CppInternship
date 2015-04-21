@@ -8,10 +8,13 @@ float produkt(float a, float b);
 
 int main()
 {
+  // Variablen
   int a, b;
+  // Eingabe
   cout << "Bitte zwei Zahlen eingeben:" << endl;
   cin >> a >> b;
 
+  // Ausgabe der Ergebnisse
   cout << produkt(a, b) << endl;
   cout << "Funktionentests:" << endl;
   // Funktioniert:

@@ -11,12 +11,16 @@ string decrypt2(string s);
 
 int main()
 {
+  // Variablen
   string read;
   int a = 0, e = 0, i = 0, o = 0, u = 0;
 
+  // String einlesen
   cout << "Bitte Zeichenkette eingeben:" << endl;
   getline(cin, read);
  
+  // Iterieren über einzelne chars
+  // Hochzählen bei Treffer
   for (auto c: read)
   {
     switch (c)
@@ -39,6 +43,7 @@ int main()
     }
   }
 
+  // Ausgaben
   cout << a << " x 'a'" << endl;
   cout << e << " x 'e'" << endl;
   cout << i << " x 'i'" << endl;
@@ -54,6 +59,7 @@ int main()
   cout << decrypt2(crypt2(read)) << endl;
 }
 
+// Verschlüsselt den string nach Caesar Verschlüsselung
 string crypt(string s)
 {
   int i = 0;
@@ -77,6 +83,7 @@ string crypt(string s)
   return s;
 }
 
+// Entschlüsselt Caesar Verschlüsselung
 string decrypt(string s)
 {
   int i = 0;
@@ -99,6 +106,7 @@ string decrypt(string s)
   return s;
 }
 
+// Eigene Verschlüsselung
 string crypt2(string s)
 {
   int i = 0;
@@ -121,6 +129,7 @@ string crypt2(string s)
   return s;
 }
 
+// Eigene Entschlüsselung
 string decrypt2(string s)
 {
   int i = 0;

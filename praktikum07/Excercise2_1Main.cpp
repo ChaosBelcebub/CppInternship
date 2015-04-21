@@ -6,12 +6,16 @@ using namespace std;
 
 int main()
 {
+  // Variablen
   char read[100] = { 0 };
   int a = 0, e = 0, i = 0, o = 0, u = 0;
 
+  // Einlesen
   cout << "Bitte Zeichenkette eingeben:" << endl;
   cin >> read;
  
+  // Iterieren über das Feld
+  // Hochzählen bei Treffer
   for (int j = 0; j < 100; ++j)
   {
     switch (*(read+j))
@@ -34,12 +38,14 @@ int main()
     }
   }
 
+  // Ausgabe
   cout << a << " x 'a'" << endl;
   cout << e << " x 'e'" << endl;
   cout << i << " x 'i'" << endl;
   cout << o << " x 'o'" << endl;
   cout << u << " x 'u'" << endl;
   
+  // Caesar Verschlüsselung
   for (int j = 0; j < 100; ++j)
   {
     switch (*(read+j))
@@ -56,9 +62,11 @@ int main()
     }
   }
 
+  // Ausgabe
   cout << "Verschlüsselter String:" << endl;
   cout << read << endl;
 
+  // Caesar Entschlüsselung
   for (int j = 0; j < 100; ++j)
   {
     switch (*(read+j))
@@ -75,9 +83,11 @@ int main()
     }
   }
 
+  // Ausgabe
   cout << "Entschlüsselter String:" << endl;
   cout << read << endl;
 
+  // Eigene Verschlüsselung
   for (int j = 0; j < 100; ++j)
   {
     switch (*(read+j))
@@ -97,9 +107,11 @@ int main()
     }
   }
 
+  // Ausgabe
   cout << "Meine Verschlüsselung:" << endl;
   cout << read << endl;
 
+  // Eigene Entschlüsselung
   for (int j = 0; j < 100; ++j)
   {
     switch (*(read+j))
@@ -119,6 +131,7 @@ int main()
     }
   }
 
+  // Ausgabe
   cout << "Meine Entschlüsselung:" << endl;
   cout << read << endl;
 }

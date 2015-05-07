@@ -92,7 +92,7 @@ int main()
 
   for (int i = 0; i < 10; i++)
   {
-    wohnungen[i].f = false;
+    setzeBelegt(wohnungen[i]);
     cout << "Wohnung " << i << ": " << wohnungen[i].f << endl;
   }
 
@@ -111,7 +111,7 @@ int main()
   }
 
   cout << "Suche Freie Wohnung mit 8 Zimmern:" << endl;
-  Whg result = sucheFreieWhg(wohnungen, 10, 8);
+  Whg result = sucheFreieWhg(wohnungen, 10, 1);
   cout << "Zimmeranzahl: " << result.z << endl;
   cout << "Wohnfläche: " << result.q << endl;
 

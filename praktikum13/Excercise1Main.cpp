@@ -8,8 +8,9 @@ void menu();
 void add(char* c);
 void del();
 void print(char* c[], int dim);
-void count(char* c[], int dim);
+int count(char* c[], int dim);
 char* init(int dim);
+char* resize(char* c[], int dim, int dimNew);
 
 
 int main()

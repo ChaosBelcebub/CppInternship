@@ -5,13 +5,16 @@
 using namespace std;
 
 void menu();
-void add(char* c);
+void add(char* c[], char* cNew);
 void del();
-void print(char* c[], int dim);
-int count(char* c[], int dim);
+void print(char* c[]);
+int count(char* c[]);
 char* init(int dim);
-char* resize(char* c[], int dim, int dimNew);
+char* resize(char* c[], int dimNew);
 
+int posinsert = 0;
+int posremove = 0;
+int dim = 0;
 
 int main()
 {
@@ -26,4 +29,34 @@ void menu()
   cout << " # i - Initialisieren" << endl;
   cout << " # l - Löschen" << endl;
   cout << " # z - Anzahl ausgeben" << endl;
+}
+
+void add(char* c[], char* cNew)
+{
+
+}
+
+void del()
+{
+
+}
+
+void print(char* c[])
+{
+
+}
+
+int count(char* c[])
+{
+
+}
+
+char* init(int dim)
+{
+
+}
+
+char* resize(char* c[], int dimNew)
+{
+
 }

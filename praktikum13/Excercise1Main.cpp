@@ -43,7 +43,19 @@ void del()
 
 void print(char* c[])
 {
-
+  cout << "|";
+  for (int i = 0; i < dim; ++i)
+  {
+    if (c[i] != 0)
+    {
+      cout << c[i];
+    }
+    else
+    {
+      cout << "   ";
+    }
+  }
+  cout << endl;
 }
 
 int count(char* c[])

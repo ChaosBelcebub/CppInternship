@@ -82,16 +82,24 @@ void menu()
 
 void add(char* c[], char cNew[])
 {
-  int len = strlen(cNew);
-  char* result;
-  result = new char[len + 1];
-
-  for (int i = 0; i < len; ++i)
+  if (count(c) < dim)
   {
-    *(result + i) = cNew[i];
+    int len = strlen(cNew);
+    char* result;
+    result = new char[len + 1];
+
+    for (int i = 0; i < len; ++i)
+    {
+      *(result + i) = cNew[i];
+    }
+
+    *(c + (posinsert)) = result;
+    posinsert = ++posinsert % dim;
   }
-  
-  *(c + (posinsert % dim)) = result;
+  else
+  {
+    cout << "Warteschlange voll!" << endl;
+  }
 }
 
 void del()
@@ -104,7 +112,7 @@ void print(char* c[])
   cout << "|";
   for (int i = 0; i < dim; ++i)
   {
-    if (*(c+i) != 0)
+    if (*(c+i) != NULL)
     {
       cout << *(c + i) << "|";
     }

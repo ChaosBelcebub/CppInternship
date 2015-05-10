@@ -8,7 +8,7 @@ using namespace std;
 void menu();
 void add(char* c[], char cNew[]);
 void del();
-void print(char* c[]);
+void print(char* c);
 int count(char* c[]);
 char* init(int dim);
 char* resize(char* c[], int dimNew);
@@ -34,7 +34,7 @@ int main()
     {
       case 'a':
       case 'A':
-        print(&warteschlange);
+        print(warteschlange);
         break;
       case 'b':
       case 'B':
@@ -107,12 +107,12 @@ void del()
 
 }
 
-void print(char* c[])
+void print(char* c)
 {
   cout << "|";
   for (int i = 0; i < dim; ++i)
   {
-    if (*(c+i) != NULL)
+    if (*(c+i) != 0)
     {
       cout << *(c + i) << "|";
     }
@@ -126,7 +126,7 @@ void print(char* c[])
 
 int count(char* c[])
 {
-
+  return 0;
 }
 
 char* init(int dim)

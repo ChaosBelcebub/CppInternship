@@ -1,11 +1,12 @@
 // Aufgabe 1
 
 #include <iostream>
+#include <string.h>
 
 using namespace std;
 
 void menu();
-void add(char* c[], char* cNew);
+void add(char* c[], char cNew[]);
 void del();
 void print(char* c[]);
 int count(char* c[]);
@@ -43,7 +44,7 @@ int main()
       case 'E':
         cout << "Bitte C-String eingeben:" << endl;
         cin >> puffer;
-        cout << puffer;
+        add(&warteschlange, puffer);
         break;
       case 'g':
       case 'G':
@@ -79,9 +80,18 @@ void menu()
   cout << " # z - Anzahl ausgeben" << endl;
 }
 
-void add(char* c[], char* cNew)
+void add(char* c[], char cNew[])
 {
+  int len = strlen(cNew);
+  char* result;
+  result = new char[len + 1];
 
+  for (int i = 0; i < len; ++i)
+  {
+    *(result + i) = cNew[i];
+  }
+
+  cout << "-" << result << "-" << endl;
 }
 
 void del()

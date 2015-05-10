@@ -14,11 +14,55 @@ char* resize(char* c[], int dimNew);
 
 int posinsert = 0;
 int posremove = 0;
-int dim = 0;
+int dim = 6;
 
 int main()
 {
+  char car;
+  char* warteschlange;
+  warteschlange = init(dim);
+  bool run = true;
 
+  menu();
+
+  while(run)
+  {
+    cin >> car;
+    switch(car)
+    {
+      case 'a':
+      case 'A':
+        cout << "print" << endl;
+        break;
+      case 'b':
+      case 'B':
+        run = false;
+        break;
+      case 'e':
+      case 'E':
+        cout << "eingeben" << endl;
+        break;
+      case 'g':
+      case 'G':
+        cout << "Größe ändern" << endl;
+        break;
+      case 'i':
+      case 'I':
+        cout << "Initialisieren" << endl;
+        break;
+      case 'l':
+      case 'L':
+        cout << "Löschen" << endl;
+        break;
+      case 'z':
+      case 'Z':
+        cout << "Anzahl ausgeben" << endl;
+        break;
+      default:
+        cout << "Befehl nicht bekannt!" << endl;
+        menu();
+    }
+  }
 }
 
 void menu()
@@ -26,6 +70,7 @@ void menu()
   cout << " # a - Warteschlange Ausgeben" << endl;
   cout << " # b - Beenden" << endl;
   cout << " # e - Eingeben" << endl;
+  cout << " # g - Größe ändern" << endl;
   cout << " # i - Initialisieren" << endl;
   cout << " # l - Löschen" << endl;
   cout << " # z - Anzahl ausgeben" << endl;
@@ -65,7 +110,8 @@ int count(char* c[])
 
 char* init(int dim)
 {
-
+  char* result = new char[dim];
+  return result;
 }
 
 char* resize(char* c[], int dimNew)

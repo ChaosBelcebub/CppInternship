@@ -34,7 +34,7 @@ int main()
     {
       case 'a':
       case 'A':
-        cout << "print" << endl;
+        print(&warteschlange);
         break;
       case 'b':
       case 'B':
@@ -90,8 +90,8 @@ void add(char* c[], char cNew[])
   {
     *(result + i) = cNew[i];
   }
-
-  cout << "-" << result << "-" << endl;
+  
+  *(c + (posinsert % dim)) = result;
 }
 
 void del()
@@ -104,13 +104,13 @@ void print(char* c[])
   cout << "|";
   for (int i = 0; i < dim; ++i)
   {
-    if (c[i] != 0)
+    if (*(c+i) != 0)
     {
-      cout << c[i];
+      cout << *(c + i) << "|";
     }
     else
     {
-      cout << "   ";
+      cout << "   |";
     }
   }
   cout << endl;

@@ -19,6 +19,7 @@ int dim = 6;
 int main()
 {
   char car;
+  char puffer[100];
   char* warteschlange;
   warteschlange = init(dim);
   bool run = true;
@@ -40,7 +41,9 @@ int main()
         break;
       case 'e':
       case 'E':
-        cout << "eingeben" << endl;
+        cout << "Bitte C-String eingeben:" << endl;
+        cin >> puffer;
+        cout << puffer;
         break;
       case 'g':
       case 'G':

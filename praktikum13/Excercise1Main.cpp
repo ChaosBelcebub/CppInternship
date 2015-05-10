@@ -85,15 +85,8 @@ void add(char* c[], char cNew[])
   if (count(c) < dim)
   {
     int len = strlen(cNew);
-    char* result;
-    result = new char[len + 1];
-
-    for (int i = 0; i < len; ++i)
-    {
-      *(result + i) = cNew[i];
-    }
-
-    *(c + (posinsert)) = result;
+    *(c + posinsert) = new char[len + 1];
+    strcpy(*(c + posinsert), cNew);
     posinsert = ++posinsert % dim;
   }
   else

@@ -7,9 +7,9 @@ using namespace std;
 
 void menu();
 void add(char* c[]);
-void del();
+void del(char* c[]);
 void print(char* c[]);
-char** init(int dim);
+char** init(int d);
 char** resize(char* c[], int dimNew);
 void flush();
 
@@ -56,7 +56,7 @@ int main()
         break;
       case 'l':
       case 'L':
-        cout << "Löschen" << endl;
+        del(warteschlange);
         break;
       case 'z':
       case 'Z':
@@ -108,9 +108,12 @@ void add(char* c[])
   }
 }
 
-void del()
+void del(char* c[])
 {
-
+  delete c[posremove];
+  c[posremove] = 0;
+  posremove = ++posremove % dim;
+  --count;
 }
 
 void print(char* c[])
@@ -130,8 +133,13 @@ void print(char* c[])
   cout << endl;
 }
 
-char** init(int dim)
+char** init(int d)
 {
+  // Altes Feld noch löschen!
+  dim = d;
+  posinsert = 0;
+  posremove = 0;
+  count = 0;
   char** result = new char*[dim];
   return result;
 }

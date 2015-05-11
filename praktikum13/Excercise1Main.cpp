@@ -6,22 +6,21 @@
 using namespace std;
 
 void menu();
-void add(char* c[], char cNew[]);
+void add(char* c[]);
 void del();
 void print(char* c);
-int count(char* c[]);
-char* init(int dim);
-char* resize(char* c[], int dimNew);
+char** init(int dim);
+char** resize(char* c[], int dimNew);
 
 int posinsert = 0;
 int posremove = 0;
 int dim = 6;
+int count = 0;
 
 int main()
 {
   char car;
-  char puffer[100];
-  char* warteschlange;
+  char** warteschlange = 0;
   warteschlange = init(dim);
   bool run = true;
 
@@ -29,12 +28,13 @@ int main()
 
   while(run)
   {
-    cin >> car;
+    car = getchar() - '0';
+
     switch(car)
     {
       case 'a':
       case 'A':
-        print(warteschlange);
+        cout << "print" << endl;
         break;
       case 'b':
       case 'B':
@@ -42,9 +42,7 @@ int main()
         break;
       case 'e':
       case 'E':
-        cout << "Bitte C-String eingeben:" << endl;
-        cin >> puffer;
-        add(&warteschlange, puffer);
+        add(warteschlange);
         break;
       case 'g':
       case 'G':
@@ -80,14 +78,16 @@ void menu()
   cout << " # z - Anzahl ausgeben" << endl;
 }
 
-void add(char* c[], char cNew[])
+void add(char* c[])
 {
-  if (count(c) < dim)
+  if (count < dim)
   {
-    int len = strlen(cNew);
-    *(c + posinsert) = new char[len + 1];
-    strcpy(*(c + posinsert), cNew);
-    posinsert = ++posinsert % dim;
+    char buffer[100];
+    cout << "Bitte C-String eingeben:" << endl;
+    fgets(buffer, 100, stdin);
+
+    int size = strlen(buffer);
+
   }
   else
   {
@@ -102,33 +102,15 @@ void del()
 
 void print(char* c)
 {
-  cout << "|";
-  for (int i = 0; i < dim; ++i)
-  {
-    if (*(c + i) != 0)
-    {
-      cout << *(c + i) << "|";
-    }
-    else
-    {
-      cout << "   |";
-    }
-  }
-  cout << endl;
 }
 
-int count(char* c[])
+char** init(int dim)
 {
-  return 0;
-}
-
-char* init(int dim)
-{
-  char* result = new char[dim];
+  char** result = new char*[dim];
   return result;
 }
 
-char* resize(char* c[], int dimNew)
+char** resize(char* c[], int dimNew)
 {
 
 }

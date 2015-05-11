@@ -52,7 +52,12 @@ int main()
         break;
       case 'i':
       case 'I':
-        cout << "Initialisieren" << endl;
+        delete [] warteschlange;
+        int d;
+        cout << "Bitte Feldgröße angeben:" << endl;
+        cin >> d;
+        flush();
+        init(d);
         break;
       case 'l':
       case 'L':
@@ -60,7 +65,7 @@ int main()
         break;
       case 'z':
       case 'Z':
-        cout << "Anzahl ausgeben" << endl;
+        cout << "Anzahl der Elemente: " << count << endl;
         break;
       default:
         cout << "Befehl nicht bekannt!" << endl;
@@ -142,13 +147,19 @@ void print(char* c[])
 
 char** init(int d)
 {
-  // Altes Feld noch löschen!
-  dim = d;
-  posinsert = 0;
-  posremove = 0;
-  count = 0;
-  char** result = new char*[dim];
-  return result;
+  if (d > 0)
+  {
+    dim = d;
+    posinsert = 0;
+    posremove = 0;
+    count = 0;
+    char** result = new char*[dim];
+    return result;
+  }
+  else
+  {
+    cout << "Bitte eine Zahl größer 0 angeben" << endl;
+  }
 }
 
 char** resize(char* c[], int dimNew)

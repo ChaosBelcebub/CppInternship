@@ -8,9 +8,10 @@ using namespace std;
 void menu();
 void add(char* c[]);
 void del();
-void print(char* c);
+void print(char* c[]);
 char** init(int dim);
 char** resize(char* c[], int dimNew);
+void flush();
 
 int posinsert = 0;
 int posremove = 0;
@@ -28,13 +29,14 @@ int main()
 
   while(run)
   {
-    car = getchar() - '0';
+    car = getchar();
+    flush();
 
     switch(car)
     {
       case 'a':
       case 'A':
-        cout << "print" << endl;
+        print(warteschlange);
         break;
       case 'b':
       case 'B':
@@ -88,6 +90,17 @@ void add(char* c[])
 
     int size = strlen(buffer);
 
+    if (buffer[size - 1] == '\n')
+    {
+      size--;
+      buffer[size] = '\0';
+    }
+
+    c[posinsert] = new char[size + 1];
+
+    strncpy(c[posinsert], buffer, size);
+    posinsert = ++posinsert % dim;
+    ++count;
   }
   else
   {
@@ -100,8 +113,21 @@ void del()
 
 }
 
-void print(char* c)
+void print(char* c[])
 {
+  cout << "|";
+  for (int i = 0; i < dim; ++i)
+  {
+    if (c[i] != 0)
+    {
+      cout << c[i] << "|";
+    }
+    else
+    {
+      cout << "   |";
+    }
+  }
+  cout << endl;
 }
 
 char** init(int dim)
@@ -113,4 +139,10 @@ char** init(int dim)
 char** resize(char* c[], int dimNew)
 {
 
+}
+
+void flush()
+{
+  int i;
+  while((i = getchar()) != EOF && i != '\n');
 }

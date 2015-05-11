@@ -205,6 +205,11 @@ char** resize(char* c[], int dimNew)
     posinsert = j;
     dim = dimNew;
 
+    for (j; j < dim; ++j)
+    {
+      result[j] = 0;
+    }
+
     delete [] c;
     return result;
   }

@@ -21,6 +21,7 @@ int count = 0;
 int main()
 {
   char car;
+  int d;
   char** warteschlange = 0;
   warteschlange = init(dim);
   bool run = true;
@@ -48,12 +49,14 @@ int main()
         break;
       case 'g':
       case 'G':
-        cout << "Größe ändern" << endl;
+        cout << "Bitte neue Feldgröße angeben:" << endl;
+        cin >> d;
+        flush();
+        resize(warteschlange, d);
         break;
       case 'i':
       case 'I':
         delete [] warteschlange;
-        int d;
         cout << "Bitte Feldgröße angeben:" << endl;
         cin >> d;
         flush();
@@ -164,7 +167,25 @@ char** init(int d)
 
 char** resize(char* c[], int dimNew)
 {
-
+  if (dimNew < 1)
+  {
+    cout << "Bitte eine Zahl größer 0 angeben" << endl;
+    return c;
+  }
+  else if (dimNew < count)
+  {
+    cout << "Warteschlange enthält mehr Einträge" << endl;
+    cout << "als das neue Feld fassen kann" << endl;
+    return c;
+  }
+  else if (dimNew == count)
+  {
+    return c;
+  }
+  else
+  {
+    
+  }
 }
 
 void flush()

@@ -52,7 +52,7 @@ int main()
         cout << "Bitte neue Feldgröße angeben:" << endl;
         cin >> d;
         flush();
-        resize(warteschlange, d);
+        warteschlange = resize(warteschlange, d);
         break;
       case 'i':
       case 'I':
@@ -184,7 +184,24 @@ char** resize(char* c[], int dimNew)
   }
   else
   {
-    
+    char** result = new char*[dimNew];
+    int j = 0;
+
+    for (int i = 0; i < dim; ++i)
+    {
+      if (c[(i + posremove) % dim] != 0)
+      {
+        result[j] = c[(i + posremove) % dim];
+        ++j;
+      }
+    }
+
+    posremove = 0;
+    posinsert = j;
+    dim = dimNew;
+
+    delete [] c;
+    return result;
   }
 }
 

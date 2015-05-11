@@ -110,10 +110,17 @@ void add(char* c[])
 
 void del(char* c[])
 {
-  delete c[posremove];
-  c[posremove] = 0;
-  posremove = ++posremove % dim;
-  --count;
+  if (count > 0)
+  {
+    delete c[posremove];
+    c[posremove] = 0;
+    posremove = ++posremove % dim;
+    --count;
+  }
+  else
+  {
+    cout << "Warteschlange leer!" << endl;
+  }
 }
 
 void print(char* c[])

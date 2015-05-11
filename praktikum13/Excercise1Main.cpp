@@ -56,11 +56,16 @@ int main()
         break;
       case 'i':
       case 'I':
+        for (int i = 0; i < dim; ++i)
+        {
+          delete warteschlange[i];
+        }
         delete [] warteschlange;
         cout << "Bitte Feldgröße angeben:" << endl;
         cin >> d;
         flush();
-        init(d);
+        warteschlange = init(d);
+        cout << dim << endl;
         break;
       case 'l':
       case 'L':

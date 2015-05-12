@@ -3,18 +3,23 @@
 #include <iostream>
 
 typedef unsigned char byte;
-int transform(int i);
+short int transform(short int i);
 
 int main()
 {
-  std::cout << std::hex << transform(0x11223344);
+  std::cout << std::hex << transform(0x11223344) << std::endl;
   return 0;
 }
 
-int transform(int i)
+// Umwandlung via Little Endian.
+// Bsp case 2:
+//            Byte an der stelle 1 wird übernommen
+//            Byte an der stelle 0 wird mit 265 multipliziert
+//            (shift 8)
+short int transform(short int i)
 {
-  int maske = 0xff, merke = 1;
-  switch (sizeof(int))
+  short int maske = 0xff, merke = i;
+  switch (sizeof(short int))
   {
     case 2:
       *((byte *) &i + 1) = (byte) maske & merke;

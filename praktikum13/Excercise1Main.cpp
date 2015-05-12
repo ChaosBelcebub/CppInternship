@@ -77,7 +77,6 @@ int main()
         cin >> d;
         flush();
         warteschlange = init(d);
-        cout << dim << endl;
         break;
       case 'l':
       case 'L':
@@ -194,6 +193,10 @@ char** init(int d)
     posremove = 0;
     count = 0;
     char** result = new char*[dim];
+    for (int i = 0; i < dim; ++i)
+    {
+      result[i] = 0;
+    }
     return result;
   }
   else

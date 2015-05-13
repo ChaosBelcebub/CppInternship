@@ -13,7 +13,7 @@ int main()
     std::cout << "Kein Speicherplatz!" << std::endl;
     exit(1);
   }
-  free(ip);
+  delete ip;;
 }
 
 /* 2. Es wird eine bad_alloc Exception geworfen

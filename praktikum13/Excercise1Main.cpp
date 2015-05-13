@@ -222,7 +222,7 @@ char** resize(char* c[], int dimNew)
     return c;
   }
   // Check if dimNew is the same
-  else if (dimNew == count)
+  else if (dimNew == dim)
   {
     return c;
   }
@@ -231,6 +231,11 @@ char** resize(char* c[], int dimNew)
     // Create new array of given size
     char** result = new char*[dimNew];
     int j = 0;
+
+    for (int i = 0; i < dimNew; i++)
+    {
+        result[i] = 0;
+    }
 
     // Copy old strings
     for (int i = 0; i < dim; ++i)
@@ -246,12 +251,6 @@ char** resize(char* c[], int dimNew)
     posremove = 0;
     posinsert = j;
     dim = dimNew;
-
-    // Set empty array
-    for (j; j < dim; ++j)
-    {
-      result[j] = 0;
-    }
 
     // Delete old array
     delete [] c;
